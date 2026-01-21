@@ -1,3 +1,3 @@
 <p align="center">
-  <img src="assets/pratik_identity_system.svg" />
+  <img src="assets/header.svg" />
 </p>
