@@ -1,0 +1,76 @@
+<svg viewBox="0 0 1500 360" width="100%" height="360" xmlns="http://www.w3.org/2000/svg">
+
+  <style>
+    .bg { fill: #0a0e13; }
+    .mono { font-family: 'JetBrains Mono', monospace; }
+    .log { font-size: 13px; fill: #1f2937; }
+    .label { font-size: 14px; fill: #6b7280; letter-spacing: 1px; }
+    .title { font-size: 48px; fill: #e5e7eb; letter-spacing: 7px; }
+    .sub { font-size: 15px; fill: #9ca3af; }
+    .philo { font-size: 14px; fill: #4b5563; letter-spacing: 1px; }
+    .line { stroke: #1f2937; stroke-width: 1; }
+    .ok { fill: #22c55e; }
+    .warn { fill: #facc15; }
+  </style>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" class="bg"></rect>
+
+  <!-- Background System Logs -->
+  <g class="mono log">
+    <text x="80" y="60">[sys] loading distributed modules...</text>
+    <text x="80" y="85">[arch] resolving dependency graph</text>
+    <text x="80" y="110">[ui] initializing interaction layers</text>
+    <text x="80" y="135">[data] binding persistent state</text>
+    <text x="80" y="160">[net] establishing real-time channels</text>
+
+    <text x="1050" y="80">[core] validating execution boundaries</text>
+    <text x="1050" y="105">[core] enforcing system invariants</text>
+    <text x="1050" y="130">[core] performance budget locked</text>
+  </g>
+
+  <!-- Structural Lines -->
+  <line x1="80" y1="190" x2="1420" y2="190" class="line"></line>
+  <line x1="80" y1="300" x2="1420" y2="300" class="line"></line>
+
+  <!-- Boot / Verification Sequence -->
+  <text x="80" y="220" class="mono label">
+    Verifying identity signature
+    <animate attributeName="opacity" from="0" to="1" dur="0.6s" fill="freeze"></animate>
+  </text>
+
+  <text x="80" y="245" class="mono label warn">
+    Cross-checking system trust
+    <animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="0.8s" fill="freeze"></animate>
+  </text>
+
+  <!-- Name Reveal -->
+  <text x="750" y="255" text-anchor="middle" class="mono title">
+    PRATIK KARGATHRA
+    <animate attributeName="opacity" from="0" to="1" dur="1s" begin="1.8s" fill="freeze"></animate>
+  </text>
+
+  <!-- Description -->
+  <text x="750" y="290" text-anchor="middle" class="mono sub">
+    Senior Software Engineer · Mobile App Developer · Product-Focused Engineer
+    <animate attributeName="opacity" from="0" to="1" dur="0.7s" begin="2.9s" fill="freeze"></animate>
+  </text>
+
+  <!-- Philosophy -->
+  <text x="750" y="320" text-anchor="middle" class="mono philo">
+    Putting life in code · Designing systems that survive change
+    <animate attributeName="opacity" from="0" to="1" dur="0.7s" begin="3.6s" fill="freeze"></animate>
+  </text>
+
+  <!-- Status -->
+  <text x="80" y="340" class="mono label ok">
+    IDENTITY VERIFIED — SYSTEM ONLINE
+    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="4.4s" fill="freeze"></animate>
+  </text>
+
+  <!-- Blinking Cursor -->
+  <rect x="460" y="326" width="10" height="16" fill="#22c55e">
+    <animate attributeName="opacity" from="1" to="0" dur="0.8s" repeatCount="indefinite"></animate>
+  </rect>
+
+</svg>
