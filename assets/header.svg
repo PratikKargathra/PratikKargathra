@@ -1,14 +1,13 @@
-<svg viewBox="0 0 1500 360" width="100%" height="360" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 1500 400" width="100%" height="400" xmlns="http://www.w3.org/2000/svg">
 
   <style>
     .bg { fill: #0a0e13; }
-    .mono { font-family: 'JetBrains Mono', monospace; }
+    .mono { font-family: monospace; }
     .log { font-size: 13px; fill: #1f2937; }
-    .label { font-size: 14px; fill: #6b7280; letter-spacing: 1px; }
-    .title { font-size: 48px; fill: #e5e7eb; letter-spacing: 7px; }
+    .cmd { font-size: 14px; fill: #6b7280; }
+    .name { font-size: 30px; fill: #e5e7eb; letter-spacing: 2px; }
     .sub { font-size: 15px; fill: #9ca3af; }
-    .philo { font-size: 14px; fill: #4b5563; letter-spacing: 1px; }
-    .line { stroke: #1f2937; stroke-width: 1; }
+    .philo { font-size: 14px; fill: #4b5563; }
     .ok { fill: #22c55e; }
     .warn { fill: #facc15; }
   </style>
@@ -16,60 +15,79 @@
   <!-- Background -->
   <rect width="100%" height="100%" class="bg"></rect>
 
-  <!-- Background System Logs -->
+  <!-- ================= LOGS (STEP 1) ================= -->
   <g class="mono log">
-    <text x="80" y="60">[sys] loading distributed modules...</text>
-    <text x="80" y="85">[arch] resolving dependency graph</text>
-    <text x="80" y="110">[ui] initializing interaction layers</text>
-    <text x="80" y="135">[data] binding persistent state</text>
-    <text x="80" y="160">[net] establishing real-time channels</text>
+    <text x="80" y="70" opacity="0">
+      [sys] loading distributed modules...
+      <animate attributeName="opacity" from="0" to="1" dur="0.25s" begin="0s" fill="freeze"></animate>
+    </text>
 
-    <text x="1050" y="80">[core] validating execution boundaries</text>
-    <text x="1050" y="105">[core] enforcing system invariants</text>
-    <text x="1050" y="130">[core] performance budget locked</text>
+    <text x="80" y="95" opacity="0">
+      [arch] resolving dependency graph
+      <animate attributeName="opacity" from="0" to="1" dur="0.25s" begin="0.35s" fill="freeze"></animate>
+    </text>
+
+    <text x="80" y="120" opacity="0">
+      [ui] initializing interaction layers
+      <animate attributeName="opacity" from="0" to="1" dur="0.25s" begin="0.7s" fill="freeze"></animate>
+    </text>
+
+    <text x="80" y="145" opacity="0">
+      [data] binding persistent state
+      <animate attributeName="opacity" from="0" to="1" dur="0.25s" begin="1.05s" fill="freeze"></animate>
+    </text>
+
+    <text x="80" y="170" opacity="0">
+      [net] establishing real-time channels
+      <animate attributeName="opacity" from="0" to="1" dur="0.25s" begin="1.4s" fill="freeze"></animate>
+    </text>
   </g>
 
-  <!-- Structural Lines -->
-  <line x1="80" y1="190" x2="1420" y2="190" class="line"></line>
-  <line x1="80" y1="300" x2="1420" y2="300" class="line"></line>
+  <!-- Divider -->
+  <line x1="80" y1="195" x2="1420" y2="195" stroke="#1f2937"></line>
 
-  <!-- Boot / Verification Sequence -->
-  <text x="80" y="220" class="mono label">
-    Verifying identity signature
-    <animate attributeName="opacity" from="0" to="1" dur="0.6s" fill="freeze"></animate>
+  <!-- ================= COMMANDS (STEP 2) ================= -->
+  <text x="80" y="225" class="mono cmd" opacity="0">
+    &gt; verifying identity signature...
+    <animate attributeName="opacity" from="0" to="1" dur="0.35s" begin="1.9s" fill="freeze"></animate>
   </text>
 
-  <text x="80" y="245" class="mono label warn">
-    Cross-checking system trust
-    <animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="0.8s" fill="freeze"></animate>
+  <text x="80" y="250" class="mono cmd warn" opacity="0">
+    &gt; cross-checking system trust...
+    <animate attributeName="opacity" from="0" to="1" dur="0.35s" begin="2.4s" fill="freeze"></animate>
   </text>
 
-  <!-- Name Reveal -->
-  <text x="750" y="255" text-anchor="middle" class="mono title">
-    PRATIK KARGATHRA
-    <animate attributeName="opacity" from="0" to="1" dur="1s" begin="1.8s" fill="freeze"></animate>
-  </text>
+  <!-- ================= FINAL OUTPUT (STEP 3) ================= -->
+  <defs>
+    <clipPath id="outputMask">
+      <rect x="80" y="270" width="0" height="130">
+        <animate attributeName="width" from="0" to="1200" dur="2.4s" begin="3.2s" fill="freeze"></animate>
+      </rect>
+    </clipPath>
+  </defs>
 
-  <!-- Description -->
-  <text x="750" y="290" text-anchor="middle" class="mono sub">
-    Senior Software Engineer · Mobile App Developer · Product-Focused Engineer
-    <animate attributeName="opacity" from="0" to="1" dur="0.7s" begin="2.9s" fill="freeze"></animate>
-  </text>
+  <g clip-path="url(#outputMask)" class="mono">
+    <text x="80" y="305" class="name">
+      PRATIK KARGATHRA
+    </text>
 
-  <!-- Philosophy -->
-  <text x="750" y="320" text-anchor="middle" class="mono philo">
-    Putting life in code · Designing systems that survive change
-    <animate attributeName="opacity" from="0" to="1" dur="0.7s" begin="3.6s" fill="freeze"></animate>
-  </text>
+    <text x="80" y="340" class="sub">
+      Senior Software Engineer · Mobile App Developer · Product-Focused Engineer
+    </text>
 
-  <!-- Status -->
-  <text x="80" y="340" class="mono label ok">
+    <text x="80" y="365" class="philo">
+      Putting life in code · Designing systems that survive change
+    </text>
+  </g>
+
+  <!-- ================= STATUS ================= -->
+  <text x="80" y="395" class="mono cmd ok" opacity="0">
     IDENTITY VERIFIED — SYSTEM ONLINE
-    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="4.4s" fill="freeze"></animate>
+    <animate attributeName="opacity" from="0" to="1" dur="0.35s" begin="6s" fill="freeze"></animate>
   </text>
 
-  <!-- Blinking Cursor -->
-  <rect x="460" y="326" width="10" height="16" fill="#22c55e">
+  <!-- ================= CURSOR ================= -->
+  <rect x="460" y="378" width="10" height="16" fill="#22c55e">
     <animate attributeName="opacity" from="1" to="0" dur="0.8s" repeatCount="indefinite"></animate>
   </rect>
 
